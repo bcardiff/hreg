@@ -1,0 +1,45 @@
+!!!
+%html
+  %head
+    %title Hreg
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+
+%body
+
+  .navbar.navbar-inverse.navbar-fixed-top
+    .navbar-inner
+      .container-fluid
+        %button.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse", :type => "button"}
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        %a.brand{:href => "#"} Hreg
+        .nav-collapse.collapse
+          %p.navbar-text.pull-right
+            Hola
+            %a.navbar-link{:href => "#"} Username!
+          %ul.nav
+            %li.active
+              %a{:href => "#"} Inicio
+            %li
+              %a{:href => "#patient"} Pacientes
+        / /.nav-collapse
+  .container-fluid
+    .row-fluid
+      .span2
+        .well.sidebar-nav
+          %ul.nav.nav-list
+            %li.nav-header Pacientes
+            %li.active
+              %a{:href => "#"} Buscar
+            %li
+              %a{:href => "#"} Agregar
+
+      .span10
+        = yield
+
+    %hr/
+    %footer
+      %p &copy; Brian J. Cardiff 2013

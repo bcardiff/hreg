@@ -1,0 +1,25 @@
+%h1 Listing patients
+
+%table
+  %tr
+    %th First name
+    %th Last name
+    %th Code
+    %th Birthday
+    %th
+    %th
+    %th
+
+  - @patients.each do |patient|
+    %tr
+      %td= patient.first_name
+      %td= patient.last_name
+      %td= patient.code
+      %td= patient.birthday
+      %td= link_to 'Show', patient
+      %td= link_to 'Edit', edit_patient_path(patient)
+      %td= link_to 'Destroy', patient, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Patient', new_patient_path
