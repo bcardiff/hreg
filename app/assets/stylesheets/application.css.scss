@@ -32,3 +32,14 @@ body {
 }
 
 @import 'bootstrap-responsive';
+
+$anemia_label_width: 270px;
+.anemia {
+  .control-label { 
+    width: $anemia_label_width;
+    text-align: left;
+  }
+  .controls {
+    margin-left: $anemia_label_width;
+  }
+}

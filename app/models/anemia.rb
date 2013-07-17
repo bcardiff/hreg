@@ -1,14 +1,24 @@
 # encoding: utf-8
 class Anemia < ActiveRecord::Base
-  # attr_accessible :title, :body
+  belongs_to :patient
+  attr_accessible :patient
 
   acts_as_survey do
-    # q :electroforesis, 'Electroforesis de Hemoglobina'
-    q :electroforesis_acetato, 'En acetato de celulosa a pH alcalino'
-    q :electroforesis_gel, 'En gel de agarosa a pH ácido'
+    text 'Electroforesis de Hemoglobina:'
 
-    q :dosaje_hemo_a2, 'Dosaje de Hemoglobina A2 (por columna)'
-    q :dosaje_hemo_fetal, 'Dosaje de Hemoglobina Fetal'
+    q :electroforesis_acetato, 'En acetato de celulosa a pH alcalino:'
+    q :electroforesis_gel, 'En gel de agarosa a pH ácido:'
+
+    q :dosaje_hemo_a2, 'Dosaje de Hemoglobina A2 (por columna):', :unit => '%'
+    q :dosaje_hemo_fetal, 'Dosaje de Hemoglobina Fetal:', :unit => '%'
+
+    q :heinz, 'Cuerpos de Heinz:'
+    q :falciformacion, 'Prueba de Falciformación (Sickling):'
+    q :brewer, 'Test de Brewer:'
+    q :carrell_kay, 'Prueba de Carrell y Kay:'
+    q :kleihauer_betke, 'Prueba de Kleihauer-Betke:'
+    q :coombs_directa, 'Prueba de Coombs directa:'
+
   end
 
 end

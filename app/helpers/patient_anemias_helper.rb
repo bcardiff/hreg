@@ -1,0 +1,2 @@
+module PatientAnemiasHelper
+end

@@ -1,5 +1,7 @@
 Hreg::Application.routes.draw do
-  resources :patients
+  resources :patients do
+    resources :anemias, :controller=>'patient_anemias'
+  end
 
 
   # The priority is based upon order of creation:

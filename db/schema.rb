@@ -11,15 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130716042102) do
+ActiveRecord::Schema.define(:version => 20130717035213) do
 
   create_table "anemia", :force => true do |t|
     t.datetime "created_at",             :null => false
     t.datetime "updated_at",             :null => false
-    t.text     "electroforesis_acetato"
-    t.text     "electroforesis_gel"
-    t.text     "dosaje_hemo_a2"
-    t.text     "dosaje_hemo_fetal"
+    t.integer  "patient_id"
+    t.string   "electroforesis_acetato"
+    t.string   "electroforesis_gel"
+    t.string   "dosaje_hemo_a2"
+    t.string   "dosaje_hemo_fetal"
+    t.string   "heinz"
+    t.string   "falciformacion"
+    t.string   "brewer"
+    t.string   "carrell_kay"
+    t.string   "kleihauer_betke"
+    t.string   "coombs_directa"
   end
 
   create_table "patients", :force => true do |t|
