@@ -2,7 +2,7 @@ Hreg::Application.routes.draw do
   mount Listings::Engine => '/listings'
 
   resources :patients do
-    resources :anemium, :path=> 'anemias', :controller=>'patient_anemias'
+    resources :anemias, :controller=>'patient_anemias'
   end
 
 

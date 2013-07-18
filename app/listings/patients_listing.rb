@@ -11,7 +11,7 @@ class PatientsListing < Listings::Base
   end
 
   column do |patient|
-    link_to 'Anemias', patient_anemium_index_url(patient), class: 'btn btn-link'
+    link_to 'Anemias', patient_anemias_path(patient), class: 'btn btn-link'
   end
 
 end

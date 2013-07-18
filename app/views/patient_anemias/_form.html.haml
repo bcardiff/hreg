@@ -2,7 +2,7 @@
   Paciente:
   = @anemia.patient.display_name
 
-= simple_form_for([@patient, @anemia], :html => {:class => 'form-horizontal anemia'}) do |f|
+= simple_form_for([@patient, @anemia], url: nested_url(@patient, @anemia), :html => {:class => 'form-horizontal anemia'}) do |f|
 
   = f.error_notification
 

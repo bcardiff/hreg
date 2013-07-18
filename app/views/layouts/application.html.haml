@@ -15,16 +15,16 @@
           %span.icon-bar
           %span.icon-bar
           %span.icon-bar
-        %a.brand{:href => "#"} Hreg
+        %a.brand{:href => root_url} Hreg
         .nav-collapse.collapse
           %p.navbar-text.pull-right
             Hola
             %a.navbar-link{:href => "#"} Username!
           %ul.nav
             %li.active
-              %a{:href => "#"} Inicio
+              = link_to 'Inicio', root_url
             %li
-              %a{:href => "#patient"} Pacientes
+              = link_to 'Pacientes', patients_path
         / /.nav-collapse
   .container-fluid
     .row-fluid
