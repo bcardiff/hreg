@@ -8,6 +8,7 @@ gem 'rails-i18n'
 
 gem 'mysql2'
 gem 'active_survey', :path => '../active_survey'
+gem 'listings', :git => 'https://github.com/manastech/listings.git'
 gem 'haml-rails'
 gem 'simple_form'
 

@@ -33,9 +33,9 @@
           %ul.nav.nav-list
             %li.nav-header Pacientes
             %li.active
-              %a{:href => "#"} Buscar
+              = link_to 'Buscar', patients_path
             %li
-              %a{:href => "#"} Agregar
+              = link_to 'Agregar', new_patient_path
 
       .span10
         = yield
