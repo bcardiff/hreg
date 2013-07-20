@@ -1,18 +1,37 @@
 %p#notice= notice
 
-%p
-  %b First name:
-  = @patient.first_name
-%p
-  %b Last name:
-  = @patient.last_name
-%p
-  %b Code:
-  = @patient.code
-%p
-  %b Birthday:
-  = @patient.birthday
+= readonly_form_for(@patient, :html => { :class => 'form-horizontal'}) do |f|
 
-= link_to 'Edit', edit_patient_path(@patient)
-\|
-= link_to 'Back', patients_path
+  .form-inputs
+    = f.input :first_name
+    = f.input :last_name
+    = f.input :code
+    = f.input :birthday
+
+  .form-actions
+    = f.button :submit
+    = link_to 'Editar', edit_patient_path(@patient), class: 'btn'
+    = link_to 'Anemias', patient_anemias_path(@patient), class: 'btn btn-link'
+
+.form-horizontal
+  .form-inputs
+    .control-group
+      %label.control-label First name
+      .controls
+        %span.uneditable-input= @patient.first_name
+    .control-group
+      %label.control-label Last name
+      .controls
+        %span.uneditable-input= @patient.last_name
+    .control-group
+      %label.control-label Code
+      .controls
+        %span.uneditable-input= @patient.code
+    .control-group
+      %label.control-label Birthday
+      .controls
+        %span.uneditable-input= @patient.birthday
+
+  .form-actions
+    = link_to 'Editar', edit_patient_path(@patient), class: 'btn'
+    = link_to 'Anemias', patient_anemias_path(@patient), class: 'btn btn-link'

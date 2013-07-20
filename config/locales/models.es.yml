@@ -1,0 +1,10 @@
+es:
+  activerecord:
+    models:
+      patient: Paciente
+    attributes:
+      patient:
+        first_name: Nombre
+        last_name: Apellido
+        code: Documento
+        birthday: Fecha nacimiento

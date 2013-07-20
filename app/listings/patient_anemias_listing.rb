@@ -10,7 +10,7 @@ class PatientAnemiasListing < Listings::Base
   column :id
   column :created_at
   column do |anemia|
-    link_to 'Editar', edit_patient_anemia_url(anemia.patient, anemia), class: 'btn btn-link'
+    link_to 'Ver', patient_anemia_url(anemia.patient, anemia), class: 'btn btn-link'
   end
 
 end
