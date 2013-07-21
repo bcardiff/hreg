@@ -34,5 +34,9 @@ class ReadonlyFormBuilder < SimpleForm::FormBuilder
   # map_type :country, :time_zone,                 :to => GenericReadonlyInput
   # map_type :boolean,                             :to => GenericReadonlyInput
 
+  def submit_button(*args, &block)
+    args.unshift 'Editar'
+    send('submit', *args, &block)
+  end
 end
 

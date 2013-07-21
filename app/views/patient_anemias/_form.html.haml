@@ -2,21 +2,10 @@
   Paciente:
   = @anemia.patient.display_name
 
-= simple_form_for([@patient, @anemia], url: nested_url(@patient, @anemia), :html => {:class => 'form-horizontal anemia'}) do |f|
-
-  = f.error_notification
-
-  .form-inputs
-    - @anemia.survey.each do |item|
-      - if item.is_a? ActiveSurvey::Question
-        - if item.unit.nil?
-          = f.input item.name, label: item.text
-        - else
-          = f.input item.name, label: item.text, :wrapper => :append do
-            = f.input_field item.name
-            %span.add-on= item.unit
-      - if item.is_a? ActiveSurvey::TextItem
-        %h3= item.text
-
-  .form-actions
-    = f.button :submit
+- if local_assigns.has_key?(:readonly) && readonly
+  = readonly_form_for([@patient, @anemia], url: edit_patient_anemia_path(@patient, @anemia), :html => { :class => 'form-horizontal anemia'}) do |f|
+    = render 'fields', f: f
+- else
+  = simple_form_for([@patient, @anemia], url: nested_url(@patient, @anemia), :html => { :class => 'form-horizontal anemia'}) do |f|
+    = f.error_notification
+    = render 'fields', f: f

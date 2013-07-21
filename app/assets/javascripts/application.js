@@ -14,5 +14,3 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require listings
-//= require jspdf.source
-//= require jspdf.plugin.from_html

@@ -32,7 +32,7 @@
         .well.sidebar-nav
           %ul.nav.nav-list
             %li.nav-header Pacientes
-            - unless @patient.nil?
+            - if !@patient.nil? && !@patient.new_record?
               %li.active
                 = link_to @patient.display_name, patient_url(@patient)
             - li_active_if :controller => 'patients', :action => 'index' do

@@ -1,0 +1,10 @@
+.form-inputs
+  = f.input :first_name
+  = f.input :last_name
+  = f.input :code
+  = f.input :birthday
+
+.form-actions
+  = f.button :submit
+  - unless @patient.new_record?
+    = link_to 'Anemias', patient_anemias_path(@patient), class: 'btn btn-link'

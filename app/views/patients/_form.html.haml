@@ -1,11 +1,7 @@
-= simple_form_for(@patient, :html => { :class => 'form-horizontal'}) do |f|
-  = f.error_notification
-
-  .form-inputs
-    = f.input :first_name
-    = f.input :last_name
-    = f.input :code
-    = f.input :birthday
-
-  .form-actions
-    = f.button :submit
+- if local_assigns.has_key?(:readonly) && readonly
+  = readonly_form_for(@patient, :html => { :class => 'form-horizontal'}) do |f|
+    = render 'fields', f: f
+- else
+  = simple_form_for(@patient, :html => { :class => 'form-horizontal'}) do |f|
+    = f.error_notification
+    = render 'fields', f: f

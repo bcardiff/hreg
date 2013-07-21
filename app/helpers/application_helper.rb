@@ -1,9 +1,9 @@
 module ApplicationHelper
   def nested_url(patient, anemia)
     if anemia.new_record?
-      patient_anemias_path(patient, anemia)
+      patient_anemias_path(patient)
     else
-      edit_patient_anemia_path(patient, anemia)
+      patient_anemia_path(patient, anemia)
     end
   end
 
@@ -15,6 +15,9 @@ module ApplicationHelper
 
   def readonly_form_for(object, *args, &block)
     options = args.extract_options!
-    simple_form_for(object, *(args << options.merge(builder: ReadonlyFormBuilder)), &block)
+    options.merge! builder: ReadonlyFormBuilder
+    options.merge! url: url_for(action: :edit)
+    options.merge! method: :get
+    simple_form_for(object, *(args << options), &block)
   end
 end
