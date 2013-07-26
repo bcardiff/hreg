@@ -1,5 +1,10 @@
+require 'readonly_form_builder'
+
 module ApplicationHelper
   def nested_url(patient, anemia)
+    # simple-navigation don't blow
+    return nil if patient.nil? || anemia.nil?
+
     if anemia.new_record?
       patient_anemias_path(patient)
     else

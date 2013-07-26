@@ -7,7 +7,7 @@ class PatientsListing < Listings::Base
   column :last_name, searchable: true
 
   column do |patient|  
-    link_to 'Edit', edit_patient_path(patient), class: 'btn btn-link'
+    link_to 'Ver', patient_path(patient), class: 'btn btn-link'
   end
 
   column do |patient|

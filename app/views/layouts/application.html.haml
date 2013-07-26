@@ -17,41 +17,17 @@
           %span.icon-bar
         %a.brand{:href => root_url} Hreg
         .nav-collapse.collapse
+          = render_navigation :renderer => BootstrapNavigation
           / %p.navbar-text.pull-right
           /   Hola
           /   %a.navbar-link{:href => "#"} Username!
-          %ul.nav
-            %li.active
-              = link_to 'Inicio', root_url
-            %li
-              = link_to 'Pacientes', patients_path
         / /.nav-collapse
   .container-fluid
     .row-fluid
-      .span2
-        .well.sidebar-nav
-          %ul.nav.nav-list
-            %li.nav-header Pacientes
-            - if !@patient.nil? && !@patient.new_record?
-              %li.active
-                = link_to @patient.display_name, patient_url(@patient)
-            - li_active_if :controller => 'patients', :action => 'index' do
-              = link_to 'Buscar', patients_url
-            - li_active_if :controller => 'patients', :action => 'new' do
-              = link_to 'Agregar', new_patient_url
-
-        - if params[:controller] == 'patient_anemias'
-          .well.sidebar-nav
-            %ul.nav.nav-list
-              %li.nav-header 
-                Anemias de 
-                = @patient.display_name
-              - li_active_if :controller => 'patient_anemias', :action => 'index' do
-                = link_to 'Buscar', patient_anemias_url(@patient)
-              - li_active_if :controller => 'patient_anemias', :action => 'new' do
-                = link_to 'Agregar', new_patient_anemia_url(@patient)
-
-      .span10
+      .span12
+        = render_navigation :renderer => BootstrapBreadcrumbs
+    .row-fluid
+      .span12
         = yield
 
     %hr/

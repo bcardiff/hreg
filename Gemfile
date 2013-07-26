@@ -11,6 +11,7 @@ gem 'active_survey', :path => '../active_survey'
 gem 'listings', :git => 'https://github.com/manastech/listings.git'
 gem 'haml-rails'
 gem 'simple_form'
+gem 'simple-navigation'
 
 # Gems used only for assets and not required
 # in production environments by default.
