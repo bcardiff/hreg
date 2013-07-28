@@ -1,14 +1,5 @@
 .form-inputs
-  - @anemia.survey.each do |item|
-    - if item.is_a? ActiveSurvey::Question
-      - if item.unit.nil?
-        = f.input item.name, label: item.text
-      - else
-        = f.input item.name, label: item.text, :wrapper => :append do
-          = f.input_field item.name
-          %span.add-on= item.unit
-    - if item.is_a? ActiveSurvey::TextItem
-      %h3= item.text
+  = simple_form_render_survey_fields f, @anemia
 
 .form-actions
   = f.button :submit

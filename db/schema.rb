@@ -11,11 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130717035213) do
+ActiveRecord::Schema.define(:version => 20130728230131) do
 
   create_table "anemia", :force => true do |t|
-    t.datetime "created_at",             :null => false
-    t.datetime "updated_at",             :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
     t.integer  "patient_id"
     t.string   "electroforesis_acetato"
     t.string   "electroforesis_gel"
@@ -27,6 +27,10 @@ ActiveRecord::Schema.define(:version => 20130717035213) do
     t.string   "carrell_kay"
     t.string   "kleihauer_betke"
     t.string   "coombs_directa"
+    t.string   "ferremia"
+    t.string   "capacidad_total_saturacion"
+    t.string   "porcentaje_saturacion"
+    t.string   "ferritina_serica"
   end
 
   create_table "patients", :force => true do |t|

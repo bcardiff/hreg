@@ -12,6 +12,7 @@ PATH
   remote: ../active_survey
   specs:
     active_survey (0.0.1)
+      haml-rails
       rails (~> 3.2.13)
 
 GEM

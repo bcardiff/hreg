@@ -19,6 +19,13 @@ class Anemia < ActiveRecord::Base
     q :kleihauer_betke, 'Prueba de Kleihauer-Betke:'
     q :coombs_directa, 'Prueba de Coombs directa:'
 
+    section 'Estudio del Hierro:' do
+      q :ferremia, 'Ferremia:', :unit => 'µg/dL'
+      q :capacidad_total_saturacion, 'Capacidad total de Saturación:', :unit => 'µg/dL'
+      q :porcentaje_saturacion, 'Porcentaje de Saturación:', :unit => '%'
+      q :ferritina_serica, 'Ferritina sérica:', :unit => 'ng/mL'
+    end
+
   end
 
 end
